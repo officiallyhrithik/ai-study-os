@@ -9,131 +9,151 @@
 
 <body>
 
-    <aside class="sidebar">
-        <h2>⚡ StudyOS</h2>
+<aside class="sidebar">
+    <h2>⚡ StudyOS</h2>
 
-        <nav>
-            <a class="active">🏠 Dashboard</a>
-            <a>📚 My Notes</a>
-            <a>🧠 AI Quiz</a>
-            <a>🗂️ Flashcards</a>
-            <a>📅 Study Planner</a>
-            <a>📊 Progress</a>
-        </nav>
+    <nav>
+        <a class="active" href="#dashboard">🏠 Dashboard</a>
+        <a href="#notes">📚 My Notes</a>
+        <a href="#quiz">🧠 AI Quiz</a>
+        <a href="#flashcards">🗂️ Flashcards</a>
+        <a href="#planner">📅 Study Planner</a>
+        <a href="#progress">📊 Progress</a>
+    </nav>
 
-        <div class="profile">
-            <div class="avatar">H</div>
-            <div>
-                <b>Student</b>
-                <small>Keep learning 🚀</small>
+    <div class="profile">
+        <div class="avatar">H</div>
+        <div>
+            <b>Student</b>
+            <small>Keep learning 🚀</small>
+        </div>
+    </div>
+</aside>
+
+<main class="main" id="dashboard">
+
+    <header>
+        <div>
+            <p class="welcome">Welcome back 👋</p>
+            <h1>Your Study Dashboard</h1>
+        </div>
+
+        <button class="ai-btn">✨ Ask AI</button>
+    </header>
+
+    <section class="stats">
+        <div class="card">
+            <span>📚</span>
+            <h3>12</h3>
+            <p>Notes</p>
+        </div>
+
+        <div class="card">
+            <span>🧠</span>
+            <h3>86%</h3>
+            <p>Quiz Score</p>
+        </div>
+
+        <div class="card">
+            <span>🔥</span>
+            <h3>7 Days</h3>
+            <p>Study Streak</p>
+        </div>
+
+        <div class="card">
+            <span>⏱️</span>
+            <h3>14h</h3>
+            <p>This Week</p>
+        </div>
+    </section>
+
+    <section class="grid">
+
+        <div class="panel">
+            <div class="panel-title">
+                <h2>Continue Learning</h2>
+                <button>View All</button>
+            </div>
+
+            <div class="subject">
+                <div class="subject-icon">💻</div>
+                <div>
+                    <h3>Python Programming</h3>
+                    <p>Functions & Data Structures</p>
+                    <div class="progress">
+                        <div style="width:72%"></div>
+                    </div>
+                </div>
+                <b>72%</b>
+            </div>
+
+            <div class="subject">
+                <div class="subject-icon">🗄️</div>
+                <div>
+                    <h3>DBMS</h3>
+                    <p>SQL & Normalization</p>
+                    <div class="progress">
+                        <div style="width:48%"></div>
+                    </div>
+                </div>
+                <b>48%</b>
+            </div>
+
+            <div class="subject">
+                <div class="subject-icon">🤖</div>
+                <div>
+                    <h3>Artificial Intelligence</h3>
+                    <p>Machine Learning Basics</p>
+                    <div class="progress">
+                        <div style="width:31%"></div>
+                    </div>
+                </div>
+                <b>31%</b>
             </div>
         </div>
-    </aside>
 
-    <main class="main">
+        <div class="panel ai-panel">
+            <span class="ai-icon">✨</span>
+            <h2>AI Study Assistant</h2>
+            <p>What do you want to study today?</p>
 
-        <header>
-            <div>
-                <p class="welcome">Welcome back 👋</p>
-                <h1>Your Study Dashboard</h1>
+            <div class="ai-options">
+                <button>📄 Summarize Notes</button>
+                <button>🧠 Generate Quiz</button>
+                <button>🗂️ Create Flashcards</button>
+                <button>💡 Explain a Topic</button>
             </div>
+        </div>
 
-            <button class="ai-btn">✨ Ask AI</button>
-        </header>
+    </section>
 
-        <section class="stats">
+    <!-- NOTES -->
 
-            <div class="card">
-                <span>📚</span>
-                <h3>12</h3>
-                <p>Notes</p>
-            </div>
+    <section class="panel notes-section" id="notes">
 
-            <div class="card">
-                <span>🧠</span>
-                <h3>86%</h3>
-                <p>Quiz Score</p>
-            </div>
+        <div class="panel-title">
+            <h2>📚 My Notes</h2>
+            <button id="addNoteBtn">+ Add Note</button>
+        </div>
 
-            <div class="card">
-                <span>🔥</span>
-                <h3>7 Days</h3>
-                <p>Study Streak</p>
-            </div>
+        <div id="notesContainer">
+            <p class="empty-notes">
+                No notes yet. Create your first note! ✨
+            </p>
+        </div>
 
-            <div class="card">
-                <span>⏱️</span>
-                <h3>14h</h3>
-                <p>This Week</p>
-            </div>
+    </section>
 
-        </section>
+    <!-- PLANNER -->
 
-        <section class="grid">
+    <section class="panel planner" id="planner">
 
-            <div class="panel">
-                <div class="panel-title">
-                    <h2>Continue Learning</h2>
-                    <button>View All</button>
-                </div>
+        <div class="panel-title">
+            <h2>Today's Plan</h2>
+            <button id="addTaskBtn">+ Add Task</button>
+        </div>
 
-                <div class="subject">
-                    <div class="subject-icon">💻</div>
-                    <div>
-                        <h3>Python Programming</h3>
-                        <p>Functions & Data Structures</p>
-                        <div class="progress">
-                            <div style="width:72%"></div>
-                        </div>
-                    </div>
-                    <b>72%</b>
-                </div>
-
-                <div class="subject">
-                    <div class="subject-icon">🗄️</div>
-                    <div>
-                        <h3>DBMS</h3>
-                        <p>SQL & Normalization</p>
-                        <div class="progress">
-                            <div style="width:48%"></div>
-                        </div>
-                    </div>
-                    <b>48%</b>
-                </div>
-
-                <div class="subject">
-                    <div class="subject-icon">🤖</div>
-                    <div>
-                        <h3>Artificial Intelligence</h3>
-                        <p>Machine Learning Basics</p>
-                        <div class="progress">
-                            <div style="width:31%"></div>
-                        </div>
-                    </div>
-                    <b>31%</b>
-                </div>
-            </div>
-
-            <div class="panel ai-panel">
-                <span class="ai-icon">✨</span>
-                <h2>AI Study Assistant</h2>
-                <p>What do you want to study today?</p>
-
-                <div class="ai-options">
-                    <button>📄 Summarize Notes</button>
-                    <button>🧠 Generate Quiz</button>
-                    <button>🗂️ Create Flashcards</button>
-                    <button>💡 Explain a Topic</button>
-                </div>
-            </div>
-
-        </section>
-
-        <section class="panel planner">
-            <div class="panel-title">
-                <h2>Today's Plan</h2>
-                <button>+ Add Task</button>
-            </div>
+        <div id="taskContainer">
 
             <div class="task">
                 <input type="checkbox">
@@ -152,10 +172,14 @@
                 <span>Take AI practice quiz</span>
                 <small>7:00 PM</small>
             </div>
-        </section>
 
-    </main>
+        </div>
 
-    <script src="script.js"></script>
+    </section>
+
+</main>
+
+<script src="script.js"></script>
+
 </body>
 </html>

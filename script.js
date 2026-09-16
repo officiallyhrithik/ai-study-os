@@ -1,46 +1,311 @@
-// AI StudyOS - Interactive Features
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-// Sidebar navigation
-const navItems = document.querySelectorAll("nav a");
+html {
+    scroll-behavior: smooth;
+}
 
-navItems.forEach(item => {
-    item.addEventListener("click", () => {
-        navItems.forEach(nav => nav.classList.remove("active"));
-        item.classList.add("active");
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f7fb;
+    color: #172033;
+    display: flex;
+}
 
-        console.log("Opened:", item.textContent.trim());
-    });
-});
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background: #111827;
+    color: white;
+    padding: 28px 18px;
+    position: fixed;
+}
 
-// Task completion
-const tasks = document.querySelectorAll(".task input");
+.sidebar h2 {
+    margin-bottom: 40px;
+    font-size: 22px;
+}
 
-tasks.forEach(task => {
-    task.addEventListener("change", () => {
-        const text = task.parentElement.querySelector("span");
+nav a {
+    display: block;
+    padding: 14px;
+    margin: 7px 0;
+    border-radius: 10px;
+    color: #cbd5e1;
+    text-decoration: none;
+    cursor: pointer;
+}
 
-        if (task.checked) {
-            text.style.textDecoration = "line-through";
-            text.style.opacity = "0.5";
-        } else {
-            text.style.textDecoration = "none";
-            text.style.opacity = "1";
-        }
-    });
-});
+nav a:hover,
+nav .active {
+    background: #263247;
+    color: white;
+}
 
-// AI button
-const aiButton = document.querySelector(".ai-btn");
+.profile {
+    position: absolute;
+    bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
 
-aiButton.addEventListener("click", () => {
-    alert("✨ AI Study Assistant coming next!");
-});
+.avatar {
+    width: 40px;
+    height: 40px;
+    background: #4f46e5;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-weight: bold;
+}
 
-// AI options
-const aiOptions = document.querySelectorAll(".ai-options button");
+.profile small {
+    display: block;
+    color: #94a3b8;
+    margin-top: 4px;
+}
 
-aiOptions.forEach(button => {
-    button.addEventListener("click", () => {
-        alert("🚀 " + button.textContent.trim() + " will be added soon!");
-    });
-});
+.main {
+    margin-left: 250px;
+    padding: 35px;
+    width: calc(100% - 250px);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.welcome {
+    color: #64748b;
+    margin-bottom: 6px;
+}
+
+h1 {
+    font-size: 30px;
+}
+
+.ai-btn,
+.panel-title button {
+    border: none;
+    background: #4f46e5;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 9px;
+    cursor: pointer;
+}
+
+.ai-btn:hover,
+.panel-title button:hover {
+    opacity: 0.9;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-bottom: 25px;
+}
+
+.card,
+.panel {
+    background: white;
+    border-radius: 15px;
+    padding: 22px;
+    box-shadow: 0 5px 20px rgba(0,0,0,.05);
+}
+
+.card span {
+    font-size: 25px;
+}
+
+.card h3 {
+    font-size: 25px;
+    margin-top: 12px;
+}
+
+.card p {
+    color: #64748b;
+    margin-top: 5px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 20px;
+}
+
+.panel-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.panel-title button {
+    padding: 8px 13px;
+}
+
+.subject {
+    display: grid;
+    grid-template-columns: 45px 1fr 45px;
+    gap: 12px;
+    align-items: center;
+    margin: 22px 0;
+}
+
+.subject-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    background: #eef2ff;
+    display: grid;
+    place-items: center;
+    font-size: 20px;
+}
+
+.subject p {
+    color: #64748b;
+    font-size: 13px;
+    margin: 5px 0;
+}
+
+.progress {
+    height: 7px;
+    background: #e5e7eb;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress div {
+    height: 100%;
+    background: #4f46e5;
+}
+
+.ai-panel {
+    text-align: center;
+}
+
+.ai-icon {
+    font-size: 42px;
+}
+
+.ai-panel p {
+    color: #64748b;
+    margin: 10px 0 22px;
+}
+
+.ai-options {
+    display: grid;
+    gap: 10px;
+}
+
+.ai-options button {
+    padding: 12px;
+    border: 1px solid #e2e8f0;
+    background: #f8fafc;
+    border-radius: 9px;
+    cursor: pointer;
+    text-align: left;
+}
+
+.ai-options button:hover {
+    background: #eef2ff;
+}
+
+.notes-section {
+    margin-top: 20px;
+}
+
+.note {
+    padding: 18px;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    margin-bottom: 12px;
+}
+
+.note-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.note-content {
+    color: #64748b;
+    margin-top: 8px;
+    white-space: pre-wrap;
+}
+
+.delete-note {
+    border: none;
+    background: #fee2e2;
+    padding: 7px 10px;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.empty-notes {
+    color: #64748b;
+    text-align: center;
+    padding: 25px;
+}
+
+.planner {
+    margin-top: 20px;
+}
+
+.task {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.task small {
+    margin-left: auto;
+    color: #64748b;
+}
+
+@media (max-width: 900px) {
+
+    .sidebar {
+        width: 200px;
+    }
+
+    .main {
+        margin-left: 200px;
+        width: calc(100% - 200px);
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .sidebar {
+        display: none;
+    }
+
+    .main {
+        margin-left: 0;
+        width: 100%;
+        padding: 20px;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+}

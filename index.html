@@ -113,73 +113,25 @@
         </div>
 
         <div class="panel ai-panel">
-            <span class="ai-icon">✨</span>
-            <h2>AI Study Assistant</h2>
-            <p>What do you want to study today?</p>
+           <div class="panel ai-panel" id="ai-assistant">
+    <span class="ai-icon">✨</span>
+    <h2>AI Study Assistant</h2>
+    <p>Ask anything about your studies.</p>
 
-            <div class="ai-options">
-                <button>📄 Summarize Notes</button>
-                <button>🧠 Generate Quiz</button>
-                <button>🗂️ Create Flashcards</button>
-                <button>💡 Explain a Topic</button>
-            </div>
+    <div id="chatBox" class="chat-box">
+        <div class="ai-message">
+            👋 Hi! I’m your StudyOS AI Assistant.<br><br>
+            Ask me to explain Python, DBMS, AI, HTML, CSS or JavaScript.
         </div>
+    </div>
 
-    </section>
-
-    <!-- NOTES -->
-
-    <section class="panel notes-section" id="notes">
-
-        <div class="panel-title">
-            <h2>📚 My Notes</h2>
-            <button id="addNoteBtn">+ Add Note</button>
-        </div>
-
-        <div id="notesContainer">
-            <p class="empty-notes">
-                No notes yet. Create your first note! ✨
-            </p>
-        </div>
-
-    </section>
-
-    <!-- PLANNER -->
-
-    <section class="panel planner" id="planner">
-
-        <div class="panel-title">
-            <h2>Today's Plan</h2>
-            <button id="addTaskBtn">+ Add Task</button>
-        </div>
-
-        <div id="taskContainer">
-
-            <div class="task">
-                <input type="checkbox">
-                <span>Complete Python assignment</span>
-                <small>10:00 AM</small>
-            </div>
-
-            <div class="task">
-                <input type="checkbox">
-                <span>Revise DBMS keys</span>
-                <small>2:00 PM</small>
-            </div>
-
-            <div class="task">
-                <input type="checkbox">
-                <span>Take AI practice quiz</span>
-                <small>7:00 PM</small>
-            </div>
-
-        </div>
-
-    </section>
-
-</main>
-
-<script src="script.js"></script>
-
-</body>
-</html>
+    <div class="chat-input">
+        <input
+            type="text"
+            id="aiInput"
+            placeholder="Ask a study question..."
+            autocomplete="off"
+        >
+        <button id="sendAI">Send 🚀</button>
+    </div>
+</div>
